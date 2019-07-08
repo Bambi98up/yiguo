@@ -26,9 +26,22 @@ if (isset($_POST['name'])) {
     }
 }
 
-if (isset($_POST['name']) && isset($_POST['pass'])&& isset($_POST['email'])) { //将前端的数据拿来
+//信息填写正确存入数据库
+if (isset($_POST['name']) && isset($_POST['pass']) && isset($_POST['email'])) { //将前端的数据拿来
     $name = $_POST['name'];
     $pass = sha1($_POST['pass']);
     $email = $_POST['email'];
     $conn->query("insert user value(null,'$name','$pass','$email',NOW())"); //存入数据库
+}
+
+//接收login叶的信息进行匹配 返回给前端
+if (isset($_POST['username']) && isset($_POST['userpass'])) {
+    $name = $_POST['username'];
+    $pass = sha1($_POST['userpass']);
+    $res = $conn->query("select * from user where username='$name' and password='$pass'");
+    if ($res->fetch_assoc()) {
+        echo true;
+    } else {
+        echo false;
+    }
 }

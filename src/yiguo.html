@@ -8,10 +8,171 @@
 	<meta name="Description"
 		content="易果生鲜Yiguo网是专业的进口生鲜水果食品网络购物平台，为您精选全球3000多种生鲜果蔬品质食材，在体验网上购物新模式的同时享尽各国新鲜美味，易果网是您悠悦生活的品质之选。">
 	<link href="../src/css/top.css" rel="stylesheet" type="text/css">
-	<link href="../src/css/index.css" rel="stylesheet" type="text/css">
 	<link href="../src/css/public.css" rel="stylesheet" type="text/css">
+	<link href="../src/css/index.css" rel="stylesheet" type="text/css">
+	<style>
+		.heid {
+			display: none;
+		}
 
+		.catalogs-list h3 i {
+			background: url(img/nav-icon.png)
+		}
 
+		.floor-guide {
+			overflow: visible;
+			display: none;
+			position: fixed;
+			top: 200px;
+			left: 50%;
+			width: 35px;
+			height: 359px;
+			margin-left: -655px;
+			z-index: 100;
+			width: 35px;
+			text-align: center;
+		}
+
+		.floor-guide a {
+			position: relative;
+			display: block;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			color: #666;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.floor-guide strong {
+			display: block;
+			width: 40px;
+			height: 40px;
+			visibility: visible;
+			background: url(img/floor_guide.png) no-repeat 0px 0px;
+		}
+
+		.floor-guide .icon01 {
+			background-position: 0 0;
+		}
+
+		.floor-guide .icon02 {
+			background-position: -40px 0;
+		}
+
+		.floor-guide .icon03 {
+			background-position: -80px 0;
+		}
+
+		.floor-guide .icon04 {
+			background-position: -120px 0;
+		}
+
+		.floor-guide .icon05 {
+			background-position: -160px 0;
+		}
+
+		.floor-guide .icon06 {
+			background-position: -200px 0;
+		}
+
+		.floor-guide .icon07 {
+			background-position: -240px 0;
+		}
+
+		.floor-guide .icon08 {
+			background-position: -280px 0;
+		}
+
+		.floor-guide .icon09 {
+			background-position: -320px 0;
+		}
+
+		.floor-guide .icon10 {
+			background-position: -360px 0;
+		}
+
+		.floor-guide .icon11 {
+			background-position: -440px 0;
+		}
+
+		.floor-guide em {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			visibility: hidden;
+			overflow: hidden;
+			width: 24px;
+			height: 29px;
+			padding: 6px 8px;
+			line-height: 14px;
+			font-style: normal;
+			color: #fff;
+			-webkit-transition: background-color .3s ease-out;
+			-moz-transition: background-color .3s ease-out;
+			-o-transition: background-color .3s ease-out;
+			transition: background-color .3s ease-out;
+		}
+
+		.floor-guide span {
+			display: block;
+			width: 10px;
+			margin: auto;
+			height: 0;
+			line-height: 0;
+			font-size: 0;
+			border-top: 1px solid #d7d7d7;
+		}
+
+		/* .floor-guide a:hover b{ visibility: hidden; }
+.floor-guide a:hover em, .floor-guide .current em{visibility: visible; color: #fff;background-color: #008842;} */
+		.floor-guide .current {
+			visibility: visible;
+			color: #fff;
+			background-color: #008842
+		}
+
+		.floor-guide .current strong {
+			display: none;
+		}
+
+		.ban-slider {
+			width: 5000px;
+			position: relative;
+		}
+
+		.ban-slider li {
+			width: 1920px;
+			position: absolute;
+			transition: all 0.2s
+		}
+
+		.arrows-btn {
+			position: relative;
+			top: 40%;
+
+		}
+
+		.arrows-btn .prev {
+			width: 40px;
+			height: 100px;
+			position: absolute;
+			left: 0px;
+			background: url(img/slider-btn.png);
+			display: none;
+		}
+
+		.arrows-btn .next {
+			width: 40px;
+			height: 100px;
+			position: absolute;
+			right: 00px;
+			background: url(img/slider-btnn.png);
+			background-size: cover;
+			display: none;
+		}
+	</style>
 </head>
 
 <body id="body">
@@ -185,10 +346,9 @@
 					<li id="_logout" style="display:none"><a href="javascript:;" class="logout">[退出]</a></li>
 					<li id="_loginname" style="display:none"><a rel="nofollow" href="http://home.yiguo.com"></a></li>
 					<li id="_register" style="display:none"><a rel="nofollow"
-							href="http://10.31.158.17/yiguo/yiguoshengxian/src/registor.html">[注册]</a></li>
+							href="http://localhost/yiguo/src/registor.html">[注册]</a></li>
 					<li id="_login" style="display:none">
-						<a rel="nofollow"
-							href="http://10.31.158.17/yiguo/yiguoshengxian/src/login.html">[登录]</a>
+						<a rel="nofollow" href="http://localhost/yiguo/src/login.html">[登录]</a>
 					</li>
 				</ul>
 			</div>
@@ -252,9 +412,8 @@
 			<div class="wrap">
 				<!--商品分类 开始-->
 				<div class="catalogs">
-
 					<div class="catalogs-title"><a href="javascript:;">全部商品分类▼</a></div>
-					<div class="catalogs-list" style="display:block">
+					<div class="catalogs-list ">
 						<div class="item">
 							<h3 class="t01_channelhome"><a
 									href="http://www.yiguo.com/products/01_channelhome.html"><i></i>进口水果<s>></s></a>
@@ -528,39 +687,21 @@
 		</div>
 		<!------- 轮播广告 ------->
 		<div class="banner-slider">
-			<ul class="b-slider">
-				<li style="background:#efefef;" _begintime="2019/7/3 10:22:32" _endtime="2019/7/31 23:59:59"
-					_title="莱尼尔">
-					<a href="http://www.yiguo.com/product/6000036612.html" target="_blank">
-						<div class="slider-wrap">
-							<span class="banner-text">
-								<img height="500" />
-							</span>
-						</div>
-						<div class="banner-main"
-							style="background:url(http://img06.yiguoimg.com/d/others/190703/9288738418927331.jpg)">
-						</div>
-					</a>
-				</li>
-				<li style="background:#efefef;" _begintime="2018/11/12 18:23:20" _endtime="2019/9/30 16:09:56">
-					<a href="http://www.yiguo.com/activity/sale/1111111111" target="_blank">
-						<div class="slider-wrap">
-							<span class="banner-text">
-								<img height="500" />
-							</span>
-						</div>
-						<div class="banner-main"
-							style="background:url(http://img12.yiguoimg.com/d/items/2018/181114/9288734053115246_1920x500.jpg)">
-						</div>
-					</a>
-				</li>
+			<ul class="ban-slider">
+				<li style="background:#efefef;"><img
+						src="http://img06.yiguoimg.com/d/others/190703/9288738418927331.jpg" alt=""></li>
+				<li style="background:#efefef;"><img
+						src="http://img12.yiguoimg.com/d/items/2018/181114/9288734053115246_1920x500.jpg" alt=""></li>
 			</ul>
-			<div class="b-btn">
-				<a class="prev" href="javascript:void(0)"></a>
+			<div class="arrows-btn">
 				<a class="next" href="javascript:void(0)"></a>
+				<a class="prev" href="javascript:void(0)"></a>
 			</div>
 			<div class="b-dot">
-				<ul></ul>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+				</ul>
 			</div>
 		</div>
 		<!------- 活动、广告位 ------->
@@ -595,218 +736,187 @@
 		</div>
 
 		<!------- 商品楼层 ------->
-		<div class="floor wrap 01_channelhome clearfix loadfloor" id="t01_channelhome"
-			data-url="/Home/Floor?floorId=01_channelhome">
-			<div class="loding"></div>
-		</div>
-		<div class="floor wrap 02_channelhome clearfix loadfloor" id="t02_channelhome"
-			data-url="/Home/Floor?floorId=02_channelhome">
-			<div class="loding"></div>
-		</div>
-		<div class="floor wrap 04_channelhome clearfix loadfloor" id="t04_channelhome"
-			data-url="/Home/Floor?floorId=04_channelhome">
-			<div class="loding"></div>
-		</div>
-		<div class="floor wrap 05_channelhome clearfix loadfloor" id="t05_channelhome"
-			data-url="/Home/Floor?floorId=05_channelhome">
-			<div class="loding"></div>
-		</div>
-		<div class="floor wrap 06_channelhome clearfix loadfloor" id="t06_channelhome"
-			data-url="/Home/Floor?floorId=06_channelhome">
-			<div class="loding"></div>
-		</div>
-		<div class="floor wrap 07_channelhome clearfix loadfloor" id="t07_channelhome"
-			data-url="/Home/Floor?floorId=07_channelhome">
-			<div class="loding"></div>
-		</div>
-		<div class="floor wrap 08_channelhome clearfix loadfloor" id="t08_channelhome"
-			data-url="/Home/Floor?floorId=08_channelhome">
-			<div class="loding"></div>
-		</div>
-		<div class="floor wrap 09_channelhome clearfix loadfloor" id="t09_channelhome"
-			data-url="/Home/Floor?floorId=09_channelhome">
-			<div class="loding"></div>
-		</div>
-		<div class="floor wrap 10_channelhome clearfix loadfloor" id="t10_channelhome"
-			data-url="/Home/Floor?floorId=10_channelhome">
-			<div class="loding"></div>
+		<div class="f">
 		</div>
 		<!--腰线 开始-->
 		<!------- 楼层引导 ------->
 
-		<div class="floor-guide" style="display: block;">
-			<div class="mui-nav">
-				<a href="#t01_channelhome">
-					<b class="icon_01_channelhome">&nbsp;</b>
-					<em>进口水果</em>
-					<i>&nbsp;</i>
-				</a>
-				<a href="#t02_channelhome">
-					<b class="icon_02_channelhome">&nbsp;</b>
-					<em>国产水果</em>
-					<i>&nbsp;</i>
-				</a>
-				<a href="#t04_channelhome">
-					<b class="icon_04_channelhome">&nbsp;</b>
-					<em>海鲜水产</em>
-					<i>&nbsp;</i>
-				</a>
-				<a href="#t05_channelhome">
-					<b class="icon_05_channelhome">&nbsp;</b>
-					<em>精选肉类</em>
-					<i>&nbsp;</i>
-				</a>
-				<a href="#t06_channelhome">
-					<b class="icon_06_channelhome">&nbsp;</b>
-					<em>禽类蛋品</em>
-					<i>&nbsp;</i>
-				</a>
-				<a href="#t07_channelhome">
-					<b class="icon_07_channelhome">&nbsp;</b>
-					<em>粮油杂货</em>
-					<i>&nbsp;</i>
-				</a>
-				<a href="#t08_channelhome">
-					<b class="icon_08_channelhome">&nbsp;</b>
-					<em>乳品糕点</em>
-					<i>&nbsp;</i>
-				</a>
-				<a href="#t09_channelhome">
-					<b class="icon_09_channelhome">&nbsp;</b>
-					<em>饮料酒水</em>
-					<i>&nbsp;</i>
-				</a>
-				<a href="#t10_channelhome">
-					<b class="icon_10_channelhome">&nbsp;</b>
-					<em>方便速食</em>
-					<i>&nbsp;</i>
-				</a>
-			</div>
+		<div class="floor-guide" ">
+			<div class=" mui-nav">
+			<a href="avascript:;">
+				<strong class="icon_01_channelhome">&nbsp;</strong>
+				<em>进口水果</em>
+				<span>&nbsp;</span>
+			</a>
+			<a href="avascript:;">
+				<strong class="icon_02_channelhome">&nbsp;</strong>
+				<em>国产水果</em>
+				<span>&nbsp;</span>
+			</a>
+			<a href="javascript:;">
+				<strong class="icon_04_channelhome">&nbsp;</strong>
+				<em>海鲜水产</em>
+				<span>&nbsp;</span>
+			</a>
+			<a href="avascript:;">
+				<strong class="icon_05_channelhome">&nbsp;</strong>
+				<em>精选肉类</em>
+				<span>&nbsp;</span>
+			</a>
+			<a href="avascript:;">
+				<strong class="icon_06_channelhome">&nbsp;</strong>
+				<em>禽类蛋品</em>
+				<span>&nbsp;</span>
+			</a>
+			<a href="avascript:;">
+				<strong class="icon_07_channelhome">&nbsp;</strong>
+				<em>粮油杂货</em>
+				<span>&nbsp;</span>
+			</a>
+			<a href="avascript:;">
+				<strong class="icon_08_channelhome">&nbsp;</strong>
+				<em>乳品糕点</em>
+				<span>&nbsp;</span>
+			</a>
+			<a href="avascript:;">
+				<strong class="icon_09_channelhome">&nbsp;</strong>
+				<em>饮料酒水</em>
+				<span>&nbsp;</span>
+			</a>
+			<a href="avascript:;">
+				<strong class="icon_10_channelhome">&nbsp;</strong>
+				<em>方便速食</em>
+				<span>&nbsp;</span>
+			</a>
 		</div>
-		<!--腰线 结束-->
-		<!--摇一摇-->
+	</div>
+	<!--腰线 结束-->
+	<!--摇一摇-->
 
-		<div class="footer_service">
-			<div class="wrap">
-				<ul>
-					<li class="s1">
-						<b>全球精选</b>
-						<span>一站式生鲜购物方案</span>
-					</li>
-					<li class="s2">
-						<b>多仓直发</b>
-						<span>次日达配送服务</span>
-					</li>
-					<li class="s3">
-						<b>品质严选</b>
-						<span>精选正宗品质好食材</span>
-					</li>
-					<li class="s4">
-						<b>天天低价</b>
-						<span>会员专属优惠购不停</span>
-					</li>
-				</ul>
-			</div>
+	<div class="footer_service">
+		<div class="wrap">
+			<ul>
+				<li class="s1">
+					<b>全球精选</b>
+					<span>一站式生鲜购物方案</span>
+				</li>
+				<li class="s2">
+					<b>多仓直发</b>
+					<span>次日达配送服务</span>
+				</li>
+				<li class="s3">
+					<b>品质严选</b>
+					<span>精选正宗品质好食材</span>
+				</li>
+				<li class="s4">
+					<b>天天低价</b>
+					<span>会员专属优惠购不停</span>
+				</li>
+			</ul>
 		</div>
-		<!------- 页尾 ------->
-		<div class="footer">
-			<div class="wrap">
-				<dl class="col1">
-					<dt>新手指南</dt>
-					<dd>
-						<p><a href="/help/registersteps.html">账户注册</a></p>
-						<p><a href="/help/gouwuliucheng.html">购物流程</a></p>
-						<p><a href="/help/ordering.html">订购方式</a></p>
-						<p><a href="/help/ubremark.html">悠币说明</a></p>
+	</div>
+	<!------- 页尾 ------->
+	<div class="footer">
+		<div class="wrap">
+			<dl class="col1">
+				<dt>新手指南</dt>
+				<dd>
+					<p><a href="/help/registersteps.html">账户注册</a></p>
+					<p><a href="/help/gouwuliucheng.html">购物流程</a></p>
+					<p><a href="/help/ordering.html">订购方式</a></p>
+					<p><a href="/help/ubremark.html">悠币说明</a></p>
 
-						<p><a href="http://www.yiguo.com/activity/sale/2999">会员等级<i class="ml5"><img
-										src="http://img06.yiguoimg.com/e/web/170315/00941/154425/icon-new.png"></i></a>
-						</p>
-
-
-					</dd>
-				</dl>
-				<dl class="col2">
-					<dt>付款方式</dt>
-					<dd>
-						<p><a href="/help/payment.html">支付方式</a>/<a href="/help/invoiceremark.html">发票说明</a></p>
-						<p><a href="/help/usechuzhika.html">礼品卡章程</a></p>
-						<p><a href="/help/usegiftcard.html">优惠代码</a></p>
-						<p><a href="/help/cardbuynotes.html">卡券购买章程</a></p>
-					</dd>
-				</dl>
-				<dl class="col3">
-					<dt>配送方式</dt>
-					<dd>
-						<p><a href="/help/sendyuefei.html">配送运费</a></p>
-						<p><a href="/help/sendquyu.html"></a></p>
-						<p><a href="/help/sendtime.html">时间及范围</a></p>
-					</dd>
-				</dl>
-				<dl class="col4">
-					<dt>售后服务</dt>
-					<dd>
-						<p><a href="/help/tuihuanhuoshuoming.html">退换货政策</a></p>
-						<p><a href="/help/huanhuolc.html">退换货流程</a></p>
-						<p><a href="/help/qa.html">常见问题</a></p>
-						<p><a href="/help/quicknessrefund.html">极速退款</a>
-							<p>
-								<p><a href="http://home.yiguo.com/Trade/Advice">投诉与建议</a></p>
-					</dd>
-				</dl>
-				<dl class="col5">
-					<dt>关于我们</dt>
-					<dd>
-						<p><a href="/help/introduction.html">公司介绍</a></p>
-						<p><a href="/help/contact.html">联系我们</a></p>
-						<p><a href="/help/procooperation.html">业务合作</a></p>
-						<p><a href="/help/chengxinjubao.html">诚信举报</a></p>
-						<p> <a href="/help/RegisterAgreement.html"> 用户协议</a> </p>
-						<p><a href="/help/PrivacyAgreement.html">隐私协议</a></p>
-
-						<p><a href="/help/friendurl.html">友情链接</a></p>
-
-					</dd>
-				</dl>
-				<div class="service"><span>客服热线 400-000-7788 企业采购或团购，请转2号键咨询</span><span>周一至周日 9:00-21:00</span></div>
-				<div class="copyright">
-					<p>所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。</p>
-					<p> <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">沪ICP备09008015号</a> Copyright
-						© 2005-2019 <a href="http://www.yiguo.com/"> </a>版权所有</p>
-					<p class="authentication">
-						<a href="http://scjgj.sh.gov.cn/platform/survey/step1_phone" target="_blank" rel="nofollow"><img
-								style="height: 47px;"
-								src="http://img05.yiguoimg.com/d/web/190617/00191/142933/ordermeal.png"></a>
-						<a href="http://www.shjbzx.cn/" target="_blank" rel="nofollow"><img style="height: 47px;"
-								src="http://img06.yiguoimg.com/d/web/190527/00191/172725/report.png"></a>
-						<a href="http://www.shjbzx.cn/" target="_blank" rel="nofollow"><img style="height: 47px;"
-								src="http://img06.yiguoimg.com/d/web/190510/00192/161235/wxb.png"></a>
-						<a href="http://www.yiguo.com/legal" target="_blank" rel="nofollow"><img
-								src="http://img07.yiguoimg.com/d/web/171208/00652/173249/153685368061665897_121x29.png"></a>
-						<a href="javascript:;" rel="nofollow"><img
-								src="https://img05.yiguoimg.com/d/web/190618/00191/143543/962110.png" height="47"></a>
-						<a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110512114405424"
-							target="_blank"><img src="//img06.yiguoimg.com/d/web/181227/00281/143951/footer_copy.jpg"
-								height="47px"></a>
-						<a target="_blank"
-							href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010502000002"
-							style="display: inline-block; text-decoration: none; height: 20px; line-height: 20px;"><img
-								src="http://www.beian.gov.cn/file/ghs.png" style="float: left;"><span
-								style="float: left; height: 20px; line-height: 20px; margin: 0px 0px 0px 5px; color: #939393;">沪公网安备
-								31010502000002号</span></a>
+					<p><a href="http://www.yiguo.com/activity/sale/2999">会员等级<i class="ml5"><img
+									src="http://img06.yiguoimg.com/e/web/170315/00941/154425/icon-new.png"></i></a>
 					</p>
-					<p>违法和不良信息举报电话 400-000-7788</p>
-				</div>
-			</div>
-		</div>
 
-		<!------- 侧边悬浮 ------->
-		<div class="sidebar" id="sidebar">
-			<a href="javascript:void(0);" class="s-btn service"></a>
-			<a href="#body" class="s-btn goTop"></a>
+
+				</dd>
+			</dl>
+			<dl class="col2">
+				<dt>付款方式</dt>
+				<dd>
+					<p><a href="/help/payment.html">支付方式</a>/<a href="/help/invoiceremark.html">发票说明</a></p>
+					<p><a href="/help/usechuzhika.html">礼品卡章程</a></p>
+					<p><a href="/help/usegiftcard.html">优惠代码</a></p>
+					<p><a href="/help/cardbuynotes.html">卡券购买章程</a></p>
+				</dd>
+			</dl>
+			<dl class="col3">
+				<dt>配送方式</dt>
+				<dd>
+					<p><a href="/help/sendyuefei.html">配送运费</a></p>
+					<p><a href="/help/sendquyu.html"></a></p>
+					<p><a href="/help/sendtime.html">时间及范围</a></p>
+				</dd>
+			</dl>
+			<dl class="col4">
+				<dt>售后服务</dt>
+				<dd>
+					<p><a href="/help/tuihuanhuoshuoming.html">退换货政策</a></p>
+					<p><a href="/help/huanhuolc.html">退换货流程</a></p>
+					<p><a href="/help/qa.html">常见问题</a></p>
+					<p><a href="/help/quicknessrefund.html">极速退款</a>
+						<p>
+							<p><a href="http://home.yiguo.com/Trade/Advice">投诉与建议</a></p>
+				</dd>
+			</dl>
+			<dl class="col5">
+				<dt>关于我们</dt>
+				<dd>
+					<p><a href="/help/introduction.html">公司介绍</a></p>
+					<p><a href="/help/contact.html">联系我们</a></p>
+					<p><a href="/help/procooperation.html">业务合作</a></p>
+					<p><a href="/help/chengxinjubao.html">诚信举报</a></p>
+					<p> <a href="/help/RegisterAgreement.html"> 用户协议</a> </p>
+					<p><a href="/help/PrivacyAgreement.html">隐私协议</a></p>
+
+					<p><a href="/help/friendurl.html">友情链接</a></p>
+
+				</dd>
+			</dl>
+			<div class="service"><span>客服热线 400-000-7788 企业采购或团购，请转2号键咨询</span><span>周一至周日 9:00-21:00</span></div>
+			<div class="copyright">
+				<p>所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。</p>
+				<p> <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">沪ICP备09008015号</a> Copyright
+					© 2005-2019 <a href="http://www.yiguo.com/"> </a>版权所有</p>
+				<p class="authentication">
+					<a href="http://scjgj.sh.gov.cn/platform/survey/step1_phone" target="_blank" rel="nofollow"><img
+							style="height: 47px;"
+							src="http://img05.yiguoimg.com/d/web/190617/00191/142933/ordermeal.png"></a>
+					<a href="http://www.shjbzx.cn/" target="_blank" rel="nofollow"><img style="height: 47px;"
+							src="http://img06.yiguoimg.com/d/web/190527/00191/172725/report.png"></a>
+					<a href="http://www.shjbzx.cn/" target="_blank" rel="nofollow"><img style="height: 47px;"
+							src="http://img06.yiguoimg.com/d/web/190510/00192/161235/wxb.png"></a>
+					<a href="http://www.yiguo.com/legal" target="_blank" rel="nofollow"><img
+							src="http://img07.yiguoimg.com/d/web/171208/00652/173249/153685368061665897_121x29.png"></a>
+					<a href="javascript:;" rel="nofollow"><img
+							src="https://img05.yiguoimg.com/d/web/190618/00191/143543/962110.png" height="47"></a>
+					<a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110512114405424"
+						target="_blank"><img src="//img06.yiguoimg.com/d/web/181227/00281/143951/footer_copy.jpg"
+							height="47px"></a>
+					<a target="_blank"
+						href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010502000002"
+						style="display: inline-block; text-decoration: none; height: 20px; line-height: 20px;"><img
+							src="http://www.beian.gov.cn/file/ghs.png" style="float: left;"><span
+							style="float: left; height: 20px; line-height: 20px; margin: 0px 0px 0px 5px; color: #939393;">沪公网安备
+							31010502000002号</span></a>
+				</p>
+				<p>违法和不良信息举报电话 400-000-7788</p>
+			</div>
 		</div>
 	</div>
 
+	<!------- 侧边悬浮 ------->
+	<div class="sidebar" id="sidebar">
+		<a href="javascript:void(0);" class="s-btn service"></a>
+		<a href="#body" class="s-btn goTop"></a>
+	</div>
+	</div>
+	<script src="../src/script/js/jquery-1.11.3.js"></script>
+	<script src="../src/script/js/ajax.js"></script>
+	<script src="../src/script/js/login.js"></script>
+	<script src="../src/script/js/index.js"></script>
 </body>
 
 </html>
