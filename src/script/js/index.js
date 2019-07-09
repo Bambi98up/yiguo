@@ -64,42 +64,44 @@
 		// 		opacity: 0.7,
 		// 	})
 		// })
-		clearInterval($timer)
+		// clearInterval(fu())
 	}, function () { //划出隐藏
-		console.log($arrows)
+		// console.log($arrows)
 		$arrows.hide()
-		setInterval(function () {
-			$next.click();
-		}, 3000)
+		// $timer
 	})
 
+
 	$prev.on('click', function () {  //点击左箭头
-		console.log($num)
 		$num--;
 		if ($num < 0) {
 			$num = 1
 			$dot.eq($num).addClass('on').siblings().removeClass('on');
 			$picli.eq($num).show().siblings().hide()
 		}
+		// console.log($num)
 		$dot.eq($num).addClass('on').siblings().removeClass('on');
 		$picli.eq($num).show().siblings().hide()
 	})
 
 	$next.on('click', function () { //点击右箭头
-		console.log($num)
 		$num++;
 		if ($num > 1) {
 			$num = 0
 			$dot.eq(0).addClass('on').siblings().removeClass('on');
 			$picli.eq(0).show().siblings().hide()
 		}
+		// console.log($num)
 		$dot.eq($num).addClass('on').siblings().removeClass('on');
 		$picli.eq($num).show().siblings().hide()
 	})
 
-	$timer = setInterval(function () {//定时器
-		$next.click()
-	}, 3000)
+	// function fu() {
+	// 	$timer = setInterval(function () {//定时器
+	// 		$next.click()
+	// 	}, 3000)
+	// }
+
 }(jQuery);
 
 
@@ -131,13 +133,13 @@
 		url: 'http://localhost/yiguo/php/yiguo.php',
 		dataType: 'json',
 	}).done(function (y) {
-		console.log(y);
+		// console.log(y);
 		var $div = '<div>';
 		$.each(y, function (index, value) {
 			$div += `
 			<div class="floor wrap 01_channelhome clearfix loadfloor" id="t0${index}_channelhome" data-url="/Home/Floor?floorId=01_channelhome">
 <div class="floor-title ">
-    <h2><a href="http://www.yiguo.com/products/01_channelhome.html" target="_blank"><i>${value.line}</i>${value.linetitle}</a></h2>
+    <h2><a href="javascript:;" target="_blank"><i>${value.line}</i>${value.linetitle}</a></h2>
         <span class="keyword">
                 <a href="http://search.yiguo.com/?keyword=%e8%bf%9b%e5%8f%a3%e8%8b%b9%e6%9e%9c&amp;pageindex=1" target="_blank" class="">${value.keyword}</a>
                 <a href="http://www.yiguo.com/products/0101_qiyiguo.html#formCx" target="_blank" class="">${value.keyword1}</a>
@@ -145,15 +147,15 @@
         </span>
 </div>
 <div class="floor-con floor-layout2">
-            <div class="floor-side"><a href="http://www.yiguo.com/products/0101_qiyiguo.html" target="_blank"><img src="${value.thumb}" width="275" height="463"></a></div>
+            <div class="floor-side"><a href="javascript:;" target="_blank"><img src="${value.thumb}" width="275" height="463"></a></div>
             <div class="floor-main">
             <ul>
-                        <li><a href="http://www.yiguo.com/product/1535355.html" target="_blank"><img src="${value.url1}" width="230" height="230"></a></li>
-                                        <li><a href="http://www.yiguo.com/product/6000034337.html" target="_blank"><img src="${value.url2}" width="230" height="230"></a></li>
-                                        <li class="wide"><a href="http://www.yiguo.com/products/0109_pingguo.html#formCx" target="_blank"><img src="${value.url3}" width="461" height="230"></a></li>
-                                        <li class="wide"><a href="http://www.yiguo.com/products/0118_liulian.html" target="_blank"><img src="${value.url4}" width="461" height="230"></a></li>
-                                        <li><a href="http://www.yiguo.com/product/6000034334.html" target="_blank"><img src="${value.url5}" width="230" height="230"></a></li>
-                                        <li><a href="http://www.yiguo.com/products/0116_mangguo.html" target="_blank"><img src="${value.url6}" width="230" height="230"></a></li>
+                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url1}" width="230" height="230"></a></li>
+                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url2}" width="230" height="230"></a></li>
+                                        <li class="wide"><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url3}" width="461" height="230"></a></li>
+                                        <li class="wide"><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url4}" width="461" height="230"></a></li>
+                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url5}" width="230" height="230"></a></li>
+                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url6}" width="230" height="230"></a></li>
             </ul>
         </div>
 </div>
@@ -165,9 +167,43 @@
 }(jQuery);
 
 
+!function ($) { //购物车 显示效果
+	$('.shopping-cart').hover(function () { //划过显示			
+		$('.shopping-list').stop().show().animate({
+			opacity: 1
+		}, 500)
+	}, function () { //划过隐藏
+		$('.shopping-list').stop().animate({
+			opacity: 0,
+		}, 500, function () {
+		})
+	})
+
+	if ($('.totleNum b').html() != 0) {
+		$('.goods').show()
+	}
+	else {
+		$('.goods').hide()
+	}
 
 
-!function ($) {
+	$('.myyiguo').hover(function () {  //我的易果
+		$(this).find('.con').show()
+	}, function () {
+		$(this).find('.con').hide()
+	})
+
+	$('.mobile').hover(function () {  //手机易果
+		$(this).find('.con').show()
+	}, function () {
+		$(this).find('.con').hide()
+	})
+}(jQuery);
+
+
+
+!function ($) {   //楼梯
+	$floorli = $('.mui-nav a em')
 	$(window).on('scroll', function () {  //显示楼梯
 		let $scrolltop = $(window).scrollTop();
 		if ($scrolltop >= 600) {
@@ -176,10 +212,31 @@
 		else {
 			$('.floor-guide').hide()
 		}
+		// $('title').html($scrolltop)
+		$main = $('.floor');
+		$main.each(function (index, value) { //滑动滚动条对应的侧边栏也发生变化
+			let $floorsrcolltop = $main.eq(index).offset().top;
+			if ($floorsrcolltop >= $scrolltop) {
+				$floorli.removeClass('current')
+				$floorli.eq(index).addClass('current')
+				return false
+			}
+			$('.mui-nav a').on('click', function () {
+				let $floortop = $main.eq($(this).index()).offset().top;
+				$('html,body').animate({
+					scrollTop: $floortop
+				})
+			})
+		})
+
+
+
 	})
 
-	const $luotia = $('.mui-nav a')
-	$luotia.on('click', function () {
-		$(this).addClass('current').css({}).siblings().removeClass('current');
-	}) ///////!!!!???
+	$('.mui-nav a').mouseover(function () { //楼梯的hover效果
+		// $(this).addClass('current').siblings().removeClass('current')
+		$(this).find('em').addClass('current').parent().siblings().find('em').removeClass('current')
+	})
+
+
 }(jQuery)

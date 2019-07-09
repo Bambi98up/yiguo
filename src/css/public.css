@@ -165,7 +165,7 @@ border-radius: 16px;}
 .shopping-list .price-total b{color:#e7380d; font-size:16px; margin:0 5px}
 .shopping-list .price-total span{ margin-left:15px;}
 .shopping-list .settleup{display:inline-block; width:75px; height:27px; font-size:12px; text-align:center; color:#fff; background:#008842;;}
-.shopping-list .nogoods{ width:380px; height:120px; line-height:120px; text-align:center; background:url(../images/none-bg-w190.jpg) no-repeat center #fff;}
+.shopping-list .nogoods{ width:380px; height:120px; line-height:120px; text-align:center; background:url(../img/none-bg-w190.jpg) no-repeat center #fff;}
 .shopping-cart-cur .cart_txt{ background-position: 0 -63px; }
 .shopping-cart-cur .shopping-list{ display:block;}
 

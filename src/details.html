@@ -13,6 +13,37 @@
     <link href="../src/css/public.css" rel="stylesheet" type="text/css">
     <link href="../src/css/details.css" rel="stylesheet" type="text/css">
     <link href="../src/css/yiguo.css" rel="stylesheet" type="text/css">
+    <style>
+        .popup {
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -200px;
+            border: 1px solid #ccc;
+            background: white;
+            text-align: center;
+            display: none
+        }
+
+        .popup a,
+        .popup button {
+            margin-top: 80px;
+            text-decoration: none
+        }
+
+        .popup button {
+            margin-left: 50px;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: -70px;
+        }
+    </style>
 </head>
 
 <body id="body">
@@ -311,26 +342,27 @@
             </div>
             <!--产品详情-->
             <div class="content clearfix">
-                <div class="product-intro clearfix j_product">
+                <div class="product-intro clearfix j_product" style="position: relative">
                     <!--预览图-->
                     <div class="pic-preview">
 
-                        <div class="pic-big">
+                        <div class="pic-big" style="position: relative">
+                            <span class="Xf"
+                                style="cursor: move; position: absolute;  display: none; width: 200px; height:200px; background: yellow; opacity: 0.5"></span>
                             <img class="j_product_img" width="500" height="500"
                                 src="http://img10.yiguoimg.com/d/items/2018/180920/9288731483612468_500.jpg"
                                 style="display:  block;">
-                            <img class="j_product_img" width="500" height="500"
-                                src="http://img14.yiguoimg.com/d/items/2018/180920/9288731483579700_500.jpg"
-                                style="display: none;">
-                            <img class="j_product_img" width="500" height="500"
-                                src="http://img09.yiguoimg.com/d/items/2018/180920/9288731483645236_500.jpg"
-                                style="display: none;">
-
+                        </div>
+                        <div class="Df"
+                            style="width: 550px ;height: 550px; position: absolute ;left:510px; top:0;z-index: 1; overflow: hidden;display: none">
+                            <img class="Dpic" style="position: absolute"
+                                src="http://img10.yiguoimg.com/d/items/2018/180920/9288731483612468_500.jpg" alt=""
+                                width="1000" height="1000">
                         </div>
                         <div class="pic-thumb">
                             <div class="picList">
                                 <ul>
-                                    <li><img width="85" height="85"
+                                    <!-- <li><img width="85" height="85"
                                             src="http://img10.yiguoimg.com/d/items/2018/180920/9288731483612468_500.jpg">
                                     </li>
                                     <li><img width="85" height="85"
@@ -338,7 +370,7 @@
                                     </li>
                                     <li><img width="85" height="85"
                                             src="http://img09.yiguoimg.com/d/items/2018/180920/9288731483645236_500.jpg">
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>
@@ -347,7 +379,7 @@
                     <div class="product-info">
                         <div class="summary-name">
                             <h1>以色列青柚8个约300g/个</h1>
-                            <p>易手剥，清新少酸</p>
+
                             <input type="hidden" name="CommodityId" id="CommodityId"
                                 value="13eaf20c-b1e2-4081-a400-13456b934fa5" />
                         </div>
@@ -386,11 +418,21 @@
                                 <div class="dt">数量：</div>
                                 <div class="dd">
                                     <div class="spinner">
-                                        <button class="decrease" disabled="disabled">-</button>
-                                        <input type="text" class="spinner value" id="p_number" maxlength="2">
+                                        <button class="decrease">-</button>
+                                        <input type="text" class="spinner value" id="p_number" maxlength="2" value="1">
                                         <button class="increase">+</button>
                                     </div>
-                                    <div class="disabled"><a href="javascript:;"><i></i>暂时无货</a></div>
+                                    <div style="background: green" class="disabled"><a href="javascript:;">加入购物车</a>
+                                    </div>
+                                </div>
+                                <div class="popout-con" style="background: white; position: absolute; display: none">
+                                    <div class="title"><i></i>提 示</div>
+                                    <div class="con">
+                                        <p style="text-align: center; font-size: 14px; padding-top: 15px;">已成功加入购物车！</p>
+                                        <div class="btnbox" style="margin-top: 45px;"><a class="confirm keep"
+                                                href="javascript:">确定</a><a class="confirm button"
+                                                href="javascript:">查看购物车</a></div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -456,17 +498,22 @@
 
 
 
-
-                    <script type="text/javascript">
+                    <script src="../src/script/js/jquery-1.11.3.js"></script>
+                    <script src="../src/script/js/jquery.lazyload.js"></script>
+                    <script src="../src/script/js/details.js"></script>
+                    <script src="../src/script/js/index.js"></script>
+                    <script src="../src/script/js/cookie.js"></script>
+                    <!-- <script type="text/javascript">
                         $(function () {
                             $("img.lazy").lazyload({ effect: "fadeIn" });
                         })
                     </script>
                 </div>
-                <!--右侧-->
-                <div class="main-con">
+                <!-- 右侧 -->
+                    <!-- <div class="main-con"> -->
                     <!--当季热卖-->
-                    <div id="GetHotCommodity"></div>
+                    <!-- <div id="GetHotCommodity"></div> --> -->
+
 
 </body>
 
