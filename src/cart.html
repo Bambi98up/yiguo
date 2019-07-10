@@ -9,6 +9,16 @@
     <link href="../src/css/cart.css" rel="stylesheet" type="text/css">
     <link href="../src/css/cartpublic.css" rel="stylesheet" type="text/css">
     <link href="../src/css/yg.css" rel="stylesheet" type="text/css">
+    <style>
+        .cart h2,
+        .order h2,
+        i,
+        .decrement,
+        .increment {
+            background-image: url(img/bg_cart.png);
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
@@ -123,6 +133,100 @@
             <!-------  我的购物车 ------->
             <div class="cart">
                 <div class="wrap">
+                    <div class="store">
+                        <h2>
+                            我的购物车
+                            <div class="city clearfix">
+                                <div class="city-sz"><i></i>配送至：</div>
+                                <div class="city-tit">
+                                    <a class="city-name" href="javascript:void()">杭州市<s></s></a>
+                                </div>
+
+                            </div>
+                            <a class="on-shopping" href="http://www.yiguo.com">继续购物 &gt; &gt;</a>
+                        </h2>
+                        <div class="cart-alert">
+                            <div class="cart-header">
+                                <table class="cart-table">
+                                    <tbody>
+                                        <tr>
+                                            <th class="cart-t-check"><label><input type="checkbox" checked="checked"
+                                                        class="chkAll">全选</label></th>
+                                            <th class="cart-t-info">商品信息</th>
+                                            <th class="cart-t-ub" style="width:75px;">悠币</th>
+                                            <th class="cart-t-price">单价</th>
+                                            <th class="cart-t-num">购买数量</th>
+                                            <th class="cart-t-total">合计</th>
+                                            <th class="cart-t-spec">规格</th>
+                                            <th class="cart-t-opera">操作</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="cart-list" id="theInsulationCan">
+                                <table class="cart-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="cart-t-check"><input type="checkbox" checked="checked"
+                                                    comid="93374f25-a478-4f67-a852-2f250c9b5e77|1"></td>
+                                            <td class="cart-t-img"><a
+                                                    href="http://www.yiguo.com/product/6000035471.html"><img
+                                                        src="http://img11.yiguoimg.com/d/items/2019/190508/9288737953687208_300.jpg"></a>
+                                            </td>
+                                            <td class="cart-t-info"><a
+                                                    href="http://www.yiguo.com/product/6000035471.html">5J西班牙橡果饲养100%伊比利亚去骨火腿(前腿)40g</a>
+                                                <p class="red"> </p>
+                                            </td>
+                                            <td class="cart-t-ub" style="width:75px;"></td>
+                                            <td class="cart-t-price">￥215.00</td>
+                                            <td class="cart-t-num">
+                                                <div class="quantity-form">
+                                                    <a href="javascript:void(0);" class="decrement"></a>
+                                                    <input id="93374f25-a478-4f67-a852-2f250c9b5e77|1" type="text"
+                                                        class="itxt" oldnum="1" value="4">
+                                                    <a href="javascript:void(0);" class="increment"></a>
+                                                </div>
+                                            </td>
+                                            <td class="cart-t-total">￥<span>255.00</span></td>
+                                            <td class="cart-t-spec">40g/包</td>
+                                            <td class="cart-t-opera">
+                                                <a href="javascript:void(0);">移入收藏</a>
+                                                <br>
+                                                <a href="javascript:void(0);">删除</a>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <div id="theCart" style="display:none;">
+                                    <span id="theTotalUB">0</span>
+                                    <span id="theTotalPrice">255.00</span>
+                                </div>
+
+                            </div>
+                            <div class="settle-space"></div>
+                            <div class="cart-footer clearfix settle">
+                                <div class="wrap">
+                                    <div class="fl">
+                                        <label><input type="checkbox" checked="checked" class="chkAll">全选</label>
+                                        <a href="###"
+                                            onclick="G.app.CartController.RemoveMultiCommodity()"><i></i>删除选中的商品</a>
+                                        <a href="###" onclick="G.app.CartController.ClearAll()">清空购物车</a>
+                                    </div>
+                                    <div class="fr">
+
+                                        <span class="ub">悠币：<em>0</em>个</span>
+                                        <span class="fs14">总价：<em>￥<span>215.00</span></em></span>
+                                        <input id="SelectedCommIds" name="SelectedCommIds" type="hidden" value="">
+
+                                        <a href="###" class="btn" id="btnSubmit" name="btnSubmit"
+                                            style="cursor:pointer;">去结算</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!--购物车空-->
                     <div class="cart-none" style="display:block;">
                         <p>
@@ -228,6 +332,14 @@
 
                 </div>
             </div>
+            <script src="../src/script/js/jquery-1.11.3.js"></script>
+            <script src="../src/script/js/index.js"></script>
+            <script src="../src/script/js/cookie.js"></script>
+            <script src="../src/script/js/cart.js"></script>
+            <script src="../src/script/js/details.js"></script>
+
+
+
     </body>
 
 </html>

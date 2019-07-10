@@ -48,7 +48,7 @@
 	const $prev = $('.prev');
 	const $next = $('.next');
 	let $num = 0
-	let $timer = null;
+	let $timer = '';
 	$dot.on('mouseover', function () { //小圆点切换
 		$num = $(this).index();
 		$(this).addClass('on').siblings().removeClass('on');
@@ -64,11 +64,13 @@
 		// 		opacity: 0.7,
 		// 	})
 		// })
-		// clearInterval(fu())
+		clearInterval($timer)
 	}, function () { //划出隐藏
 		// console.log($arrows)
 		$arrows.hide()
-		// $timer
+		$timers = setInterval(function () {//定时器
+			$next.click()
+		}, 3000)
 	})
 
 
@@ -96,11 +98,11 @@
 		$picli.eq($num).show().siblings().hide()
 	})
 
-	// function fu() {
-	// 	$timer = setInterval(function () {//定时器
-	// 		$next.click()
-	// 	}, 3000)
-	// }
+
+	$timer = setInterval(function () {//定时器
+		$next.click()
+	}, 3000)
+
 
 }(jQuery);
 
@@ -150,12 +152,12 @@
             <div class="floor-side"><a href="javascript:;" target="_blank"><img src="${value.thumb}" width="275" height="463"></a></div>
             <div class="floor-main">
             <ul>
-                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url1}" width="230" height="230"></a></li>
-                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url2}" width="230" height="230"></a></li>
-                                        <li class="wide"><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url3}" width="461" height="230"></a></li>
-                                        <li class="wide"><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url4}" width="461" height="230"></a></li>
-                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url5}" width="230" height="230"></a></li>
-                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img src="${value.url6}" width="230" height="230"></a></li>
+                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url1}" width="230" height="230"></a></li>
+                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url2}" width="230" height="230"></a></li>
+                                        <li class="wide"><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url3}" width="461" height="230"></a></li>
+                                        <li class="wide"><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url4}" width="461" height="230"></a></li>
+                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url5}" width="230" height="230"></a></li>
+                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url6}" width="230" height="230"></a></li>
             </ul>
         </div>
 </div>
@@ -163,6 +165,11 @@
 		})
 		$div += '</div>'
 		$floor.html($div)
+		$(function () {
+			$('img.lazy').lazyload({
+				effect: 'fadeIn'
+			});
+		})
 	})
 }(jQuery);
 
@@ -223,6 +230,7 @@
 			}
 			$('.mui-nav a').on('click', function () {
 				let $floortop = $main.eq($(this).index()).offset().top;
+				// console.log($floortop)
 				$('html,body').animate({
 					scrollTop: $floortop
 				})
@@ -240,3 +248,19 @@
 
 
 }(jQuery)
+
+	// ; !function ($) { //搜索框的渲染
+	// 	$.ajax({
+	// 		url: 'http://search.yiguo.com/ajax/fullsearch.ashx?datestamp=1562729036829&term=f&jsoncallback=jQuery17204772882421044524_1562728980006&_=1562729036830'，
+	// 		dataType: 'jsonp',
+	// 		data: {
+	// 			value: 11
+	// 		}
+	// 	}).done(function (data) {
+	// 		console.log(data)
+	// 		$.each(data, function (i, val) {
+
+	// 		})
+	// 	})
+
+	// }(jQuery)

@@ -60,101 +60,6 @@
                             <a class="city-name" href="javascript:void(0)">杭州市<s></s></a>
                         </div>
                         <div class="city-con" id="citylist">
-
-                            <script id="_citytpl" type="text/x-handlebars-template">
-
-    <div class="headline">
-        <a href="javascript:;" v="64" aid="00000000-0000-0000-0000-000000000000">全国其它城市&gt;&gt;</a> 请根据您的收货地址选择
-    </div>
-    <div class="city-hot">
-        <span><i></i>热门城市</span>
-        {{#each HotCity}}
-        <a href="javascript:;" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}">{{AreaName}}</a>
-        {{/each}}
-    </div>
-    <p class="citytab"><span class="active">ABCDE</span><span>FGHIJ</span><span>KLMNO</span><span class="">PQRST</span><span class="">UVWXYZ</span></p>
-    <div class="citylist active">
-        {{#each City1}}
-        <dl>
-            <dt>{{@key}}</dt>
-            <dd>
-                {{#each this}}
-                {{#equal WebShow 2}}
-                <a href="javascript:;" class="hot" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}"><strong>{{AreaName}}</strong></a>
-                {{else}}
-                <a href="javascript:;" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}">{{AreaName}}</a>
-                {{/equal}}
-                {{/each}}
-            </dd>
-        </dl>
-        {{/each}}
-    </div>
-    <div class="citylist ">
-        {{#each City2}}
-        <dl>
-            <dt>{{@key}}</dt>
-            <dd>
-                {{#each this}}
-                {{#equal WebShow 2}}
-                <a href="javascript:;" class="hot" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}"><strong>{{AreaName}}</strong></a>
-                {{else}}
-                <a href="javascript:;" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}">{{AreaName}}</a>
-                {{/equal}}
-                {{/each}}
-            </dd>
-        </dl>
-        {{/each}}
-    </div>
-    <div class="citylist ">
-        {{#each City3}}
-        <dl>
-            <dt>{{@key}}</dt>
-            <dd>
-                {{#each this}}
-                {{#equal WebShow 2}}
-                <a href="javascript:;" class="hot" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}"><strong>{{AreaName}}</strong></a>
-                {{else}}
-                <a href="javascript:;" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}">{{AreaName}}</a>
-                {{/equal}}
-                {{/each}}
-            </dd>
-        </dl>
-        {{/each}}
-    </div>
-    <div class="citylist ">
-        {{#each City4}}
-        <dl>
-            <dt>{{@key}}</dt>
-            <dd>
-                {{#each this}}
-                {{#equal WebShow 2}}
-                <a href="javascript:;" class="hot" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}"><strong>{{AreaName}}</strong></a>
-                {{else}}
-                <a href="javascript:;" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}">{{AreaName}}</a>
-                {{/equal}}
-                {{/each}}
-            </dd>
-        </dl>
-        {{/each}}
-    </div>
-    <div class="citylist ">
-        {{#each City5}}
-        <dl>
-            <dt>{{@key}}</dt>
-            <dd>
-                {{#each this}}
-                {{#equal WebShow 2}}
-                <a href="javascript:;" class="hot" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}"><strong>{{AreaName}}</strong></a>
-                {{else}}
-                <a href="javascript:;" v="{{WebCode}}" aid="{{AreaId}}" _type="{{DeliveryType}}">{{AreaName}}</a>
-                {{/equal}}
-                {{/each}}
-            </dd>
-        </dl>
-        {{/each}}
-    </div>
-
-</script>
                         </div>
                     </li>
                     <!--送货城市 结束-->
@@ -234,15 +139,6 @@
                     </div>
                     <ul class="hide" id="shelper" style="display: none;"></ul>
                     <div class="search-keywords" id="keywords">
-                        <script id="keywordstpl" type="text/x-handlebars-template">
-                            {{#KeyWords}}
-                            {{#equal IsImportant true}}
-                            <a href="{{Link}}" class="hot" target="_blank">{{Text}}</a>
-                            {{else}}
-                            <a href="{{Link}}" target="_blank">{{Text}}</a>
-                            {{/equal}}
-                            {{/KeyWords}}
-                        </script>
                     </div>
                 </div>
                 <!--购物车 开始-->
@@ -279,53 +175,13 @@
                 <div class="catalogs">
                     <div class="catalogs-title"><a href="javascript:;">全部商品分类▼</a></div>
                     <div class="catalogs-list" id="_categry" style="display:none;">
-                        <script id="_categorytpl" type="text/x-handlebars-template">
-    {{#each Catrgories}}
-    <div class="item">
-        <h3 class="t{{CategoryCode}}"><a href="http://www.yiguo.com/products/{{CategoryCode}}.html"><i></i>{{CategoryName}}<s>&gt;</s></a></h3>
-        <div class="sub-item" style="display: none;">
-            <h4><a href="http://www.yiguo.com/products/{{CategoryCode}}.html" > {{CategoryName}}</a></h4>
-            <div class="sub-list">
-                {{#if SubCategory2}}
-                {{#each SubCategory2}}
-                <a href="http://www.yiguo.com/products/{{CategoryCode}}.html" target="_blank">{{CategoryName}}</a>
-                {{/each}}
-                {{/if}}
-
-                {{#if SubCategory1}}
-                {{#each SubCategory1}}
-                <a href="http://www.yiguo.com/products/{{CategoryCode}}.html" target="_blank">{{CategoryName}}</a>
-                {{/each}}
-                {{/if}}
-
-                {{#if SubCategory0}}
-                {{#each SubCategory0}}
-                <a href="http://www.yiguo.com/products/{{CategoryCode}}.html" target="_blank">{{CategoryName}}</a>
-                {{/each}}
-                {{/if}}
-
-            </div>
-            <div class="catalogs-ad">
-                {{#each CategoryImageAd}}
-                <a href="{{Link}}"><img src="{{Image}}"></a>
-                {{/each}}
-            </div>
-        </div>
-    </div>
-    {{/each}}
-
-</script>
+                      
 
                     </div>
                 </div>
                 <!--商品分类 结束-->
                 <div class="nav-items">
                     <ul id="homenav">
-                        <script id="homenavtpl" type="text/x-handlebars-template">
-                    {{#HomeNav}}
-                    <li><a href="{{Link}}" target="_blank">{{Text}}</a></li>
-                    {{/HomeNav}}
-                 </script>
                     </ul>
                 </div>
             </div>
@@ -459,7 +315,6 @@
                                         <th>发货地：</th>
                                         <td>杭州</td>
                                     </tr>
-
                                 </tbody>
                             </table>
                         </div>
@@ -476,20 +331,6 @@
                         <div class="box recently">
                             <div class="hd">最近浏览<a href="javascript:;" onclick="ClearViewedCommodity()">清空</a></div>
                             <div class="bd" id="recentcommodity">
-                                <script id="recentcommoditytpl" type="text/x-handlebars-template">
-            {{#data}}
-            <div class="p">
-                <div class="img"><a class="del" onclick="DeleteViewedCommodity(this, '{{CommodityCode}}')"></a>
-                    <a href="http://www.yiguo.com/product/{{CommodityCode}}.html" target="_blank"><img class="lazy" data-original="{{PictureUrl}}" width="68" height="68"></a>
-                </div>
-                <div class="txt">
-                    <a href="http://www.yiguo.com/product/{{CommodityCode}}.html" target="_blank">
-                        <strong>{{CommodityName}}</strong>
-                    </a>
-                </div>
-            </div>
-            {{/data}}
-        </script>
                             </div>
                         </div>
 
@@ -500,20 +341,9 @@
 
                     <script src="../src/script/js/jquery-1.11.3.js"></script>
                     <script src="../src/script/js/jquery.lazyload.js"></script>
-                    <script src="../src/script/js/details.js"></script>
                     <script src="../src/script/js/index.js"></script>
                     <script src="../src/script/js/cookie.js"></script>
-                    <!-- <script type="text/javascript">
-                        $(function () {
-                            $("img.lazy").lazyload({ effect: "fadeIn" });
-                        })
-                    </script>
-                </div>
-                <!-- 右侧 -->
-                    <!-- <div class="main-con"> -->
-                    <!--当季热卖-->
-                    <!-- <div id="GetHotCommodity"></div> --> -->
-
+                    <script src="../src/script/js/details.js"></script>
 
 </body>
 

@@ -20,7 +20,7 @@
 .steps .on .b2{ background-position:-42px -44px;}
 .steps .on .b3{ background-position:-84px -44px;}
 
-.cart h2, .order h2, i, .decrement, .increment { background-image: url(../images/bg_cart.png); background-repeat: no-repeat; }
+.cart h2, .order h2, i, .decrement, .increment { background-image: url(img/bg_cart.png); background-repeat: no-repeat; }
 .cart h2 { font-weight: normal; height: 38px; line-height: 38px; background-color: #fff; background-position: 0 0; border-bottom: 2px solid #05984d; text-indent: -9999em; position: relative }
 .cart h2 .tips { color: #008842; position: absolute; left: 465px; top: 0; height: 38px; line-height: 38px; text-indent: 0; }
 .on-shopping { cursor: pointer; position: absolute; right: 0; top: 0; color: #008842; text-indent: 0; text-decoration: underline; margin-right: 22px }

@@ -18,8 +18,6 @@
             this.$popup = $('.popout-con')
             this.$keep = $('.popout-con .keep');
             this.$lookcart = $('.popout-con .button');
-            this.$arrsid=[];
-            this.$arrnum=[]
         }
         init() {
             let _this = this;
@@ -83,7 +81,7 @@
                 if ($('#p_number').attr('value') > 0) {
                     _this.$popup.show()
                     _this.$cookie();
-                    _this.$cookievalue();
+                    // _this.$cookievalue();
                 }
             })
 
@@ -121,8 +119,8 @@
 
 
             //移动和限定范围
-            let $l = ev.clientX - this.$Xpic.offset().left - this.$Xf.width() / 2;
-            let $t = ev.clientY - this.$Xpic.offset().top - this.$Xf.height() / 2;
+            let $l = ev.pageX - this.$Xpic.offset().left - this.$Xf.width() / 2;
+            let $t = ev.pageY - this.$Xpic.offset().top - this.$Xf.height() / 2;
             if ($l > this.$Xpic.width() - this.$Xf.width()) {
                 $l = this.$Xpic.width() - this.$Xf.width()
             }
@@ -152,40 +150,44 @@
         $picli(y) {
             let $lilist = '';
             let $ullist = y.urls.split(',');
-            console.log($ullist)
+            // console.log($ullist)
             $.each($ullist, function (i, val) {
-                console.log(i)
-                console.log(val)
+                // console.log(i)
+                // console.log(val)
                 $lilist += '<li><img width="85" height="85"src="' + val + '"></li>';
             })
             $('.picList ul').html($lilist)
         }
         //cookie存在转换为数组
         $cookievalue() {
-            if (getcookie('cookiesid') && getcookie('cookeienum')) {
-                this.$arrsid = getcookie('cookiesid').split(',');
-                this.$arrnum = getcookie('cookienum').split(',');
-            }
+
         }
 
         //
         $cookie() {
-            //获取当前按钮的sid和input里面的值
-            if (this.$arrsid.index(this.$sid) === -1) {//不存在
-                this.$arrsid.append(this.$sid);
-                this.$arrnum.append(this.inputvalue.value);
-                // console.log(this.arrsid);
-                // console.log(this.arrsum);
-                setcookie('cookiesid', this.arrsid.toString(), 7);
-                setcookie('cookienum', this.arrnum.toString(), 7)
-            } else {//存在的话就给arrsum累加
-                let sum = Number(this.arrnum[this.arrsid.indexOf(this.sid)]) + Number(this.inputvalue.value);
-                this.arrnum[this.$arrsid.index(this.sid)] = sum;
-                setcookie('cookienum', this.arrnum.toString(), 7);
+            var arrsid = [];
+            var arrnum = [];
+            if (getcookie('cookiesid') && getcookie('cookeienum')) {
+                arrsid = getcookie('cookiesid').split(',');
+                arrnum = getcookie('cookienum').split(',');
             }
+
+            
+            //获取当前按钮的sid和input里面的值
+            if ($.inArray(this.$sid, arrsid) === -1) {//不存在
+                arrsid.push(this.$sid);
+                arrnum.push($('#p_number').val());
+                //console.log(arrsid);
+                //console.log(arrnum);
+                setcookie('cookiesid', arrsid.toString(), 7);
+                setcookie('cookienum', arrnum.toString(), 7);
+            } else {//存在的话就给arrsum累加
+                var num = parseInt(arrnum[$.inArray(this.$sid, arrsid)]) + parseInt($('#p_number').val());
+                arrnum[$.inArray(this.$sid, arrsid)] = num;
+                setcookie('cookienum', arrnum.toString(), 7);
+            }
+
         }
-
-
     }
     new Details().init();
 }(jQuery);
