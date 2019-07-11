@@ -23,7 +23,7 @@
             let _this = this;
             let $num = 1
             $.ajax({
-                url: 'http://localhost/yiguo/php/details.php',
+                url: 'http://10.31.158.17/yiguo/php/details.php',
                 data: {
                     picid: this.$sid
                 },
@@ -91,7 +91,7 @@
             })
 
             this.$lookcart.on('click', function () {
-                $(window).attr('location', 'http://localhost/yiguo/src/cart.html');
+                $(window).attr('location', 'http://10.31.158.17/yiguo/src/cart.html');
             })
         }
 
@@ -172,7 +172,7 @@
                 arrnum = getcookie('cookienum').split(',');
             }
 
-            
+
             //获取当前按钮的sid和input里面的值
             if ($.inArray(this.$sid, arrsid) === -1) {//不存在
                 arrsid.push(this.$sid);

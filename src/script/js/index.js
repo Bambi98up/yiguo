@@ -132,7 +132,7 @@
 	//渲染效果
 	const $floor = $('.f');
 	$.ajax({
-		url: 'http://localhost/yiguo/php/yiguo.php',
+		url: 'http://10.31.158.17/yiguo/php/yiguo.php',
 		dataType: 'json',
 	}).done(function (y) {
 		// console.log(y);
@@ -152,12 +152,12 @@
             <div class="floor-side"><a href="javascript:;" target="_blank"><img src="${value.thumb}" width="275" height="463"></a></div>
             <div class="floor-main">
             <ul>
-                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url1}" width="230" height="230"></a></li>
-                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url2}" width="230" height="230"></a></li>
-                                        <li class="wide"><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url3}" width="461" height="230"></a></li>
-                                        <li class="wide"><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url4}" width="461" height="230"></a></li>
-                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url5}" width="230" height="230"></a></li>
-                                        <li><a href="http://localhost/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url6}" width="230" height="230"></a></li>
+                        <li><a href="http://10.31.158.17/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url1}" width="230" height="230"></a></li>
+                                        <li><a href="http://10.31.158.17/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url2}" width="230" height="230"></a></li>
+                                        <li class="wide"><a href="http://10.31.158.17/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url3}" width="461" height="230"></a></li>
+                                        <li class="wide"><a href="http://10.31.158.17/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url4}" width="461" height="230"></a></li>
+                                        <li><a href="http://10.31.158.17/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url5}" width="230" height="230"></a></li>
+                                        <li><a href="http://10.31.158.17/yiguo/src/details.html?sid=${value.sid}" target="_blank"><img class="lazy" data-original="${value.url6}" width="230" height="230"></a></li>
             </ul>
         </div>
 </div>
@@ -194,16 +194,31 @@
 	}
 
 
+	//登录时显示登录姓名
+	if (localStorage.getItem('user')) {
+		$('#_logout').show() //登录时显示
+		$('#_loginname').show().find('a').html(localStorage.getItem('user'))
+		$('#_register,#_login').hide() //隐藏退出登录两个Li
+		$('#_logout').on('click', function () { //点击退出时
+			localStorage.removeItem('user'), //删除本地存储的用户名和密码
+				localStorage.removeItem('pass')
+			$('#_register,#_login').show() //显示登录和注册
+			$('#_logout,#_loginname').hide()  //隐藏退出和用户名的li
+		})
+	}
+
+
+
 	$('.myyiguo').hover(function () {  //我的易果
-		$(this).find('.con').show()
+		$(this).addClass('current').find('.con').show()
 	}, function () {
-		$(this).find('.con').hide()
+		$(this).removeClass('current').find('.con').hide()
 	})
 
 	$('.mobile').hover(function () {  //手机易果
-		$(this).find('.con').show()
+		$(this).addClass('current').find('.con').show().addClass('curren')
 	}, function () {
-		$(this).find('.con').hide()
+		$(this).removeClass('current').find('.con').hide()
 	})
 }(jQuery);
 
@@ -228,13 +243,13 @@
 				$floorli.eq(index).addClass('current')
 				return false
 			}
-			$('.mui-nav a').on('click', function () {
-				let $floortop = $main.eq($(this).index()).offset().top;
-				// console.log($floortop)
-				$('html,body').animate({
-					scrollTop: $floortop
-				})
-			})
+			// $('.mui-nav a').on('click', function () {
+			// 	let $floortop = $main.eq($(this).index()).offset().top;
+			// 	// console.log($floortop)
+			// 	$('html,body').animate({
+			// 		scrollTop: $floortop
+			// 	})
+			// })
 		})
 
 

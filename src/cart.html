@@ -21,325 +21,324 @@
     </style>
 </head>
 
-<body>
-
-    <body id="body">
-        <div class="w">
-
-
-            <!------- 顶部工具栏 ------->
-            <div class="site-nav">
-                <div class="wrap">
-                    <ul class="fl">
-                        <li>欢迎光临易果生鲜！</li>
-                        <li>
-                            <img src="//img05.yiguoimg.com/d/web/190408/00592/145951/notice.png"
-                                style="vertical-align:middle;width:16px;height:16px;">
-                            <a href="http://www.yiguo.com/help/policenotice.html" target="_blank">网警提示</a>
-                        </li>
-                    </ul>
-                    <ul class="fr">
-                        <li class="apt">
-                            <img src="//img06.yiguoimg.com/d/web/190328/00592/142712/招聘1.png"
-                                style="vertical-align:middle;">
-                            <a href="http://hr.yiguo.com" target="_blank">人才招聘</a>
-                        </li>
-                        <li class="apt">
-                            <img src="//img06.yiguoimg.com/d/web/181129/00341/103626/aptitudeicon.png"
-                                style="vertical-align:middle;">
-                            <a href="http://www.yiguo.com/help/Qualification.html" target="_blank">营业资质</a>
-                        </li>
-                        <li class="TEL"><a href="http://home.yiguo.com/Trade/OnlineDelivery"
-                                target="_blank"><i></i>礼品兑换券入口</a></li>
-                        <li class="pay"><a href="http://home.yiguo.com/Recharge/Index" target="_blank"><i></i>礼品卡绑定</a>
-                        </li>
-                        <li class="mobile">
-                            <div class="tit"><a href="javascript:void(0)"><i></i>手机易果<s></s></a></div>
-                            <div class="con">
-                                <div class="item"><img src="http://static01.yiguo.com/www/images/header/qrcode_app.jpg"
-                                        width="125" height="125"><span>扫一扫下载APP</span></div>
-                                <div class="item"><img
-                                        src="http://static01.yiguo.com/www/images/header/qrcode_wechat.jpg" width="125"
-                                        height="125"><span>易果生鲜官方微信</span></div>
-                            </div>
-                        </li>
-                        <li class="myyiguo">
-                            <div class="tit"><a href="http://home.yiguo.com" target="_blank"><i></i>我的易果<s></s></a>
-                            </div>
-                            <div class="con">
-                                <a href="http://home.yiguo.com/Trade/OrderList">我的订单</a>
-                                <a href="http://home.yiguo.com/Trade/MyCoupons">我的优惠券</a>
-                                <a href="http://home.yiguo.com/Trade/UMoney">我的悠币</a>
-                                <a href="http://home.yiguo.com/Trade/MyCollection">我的收藏</a>
-                                <a href="http://home.yiguo.com/Trade/BackOrder">我的退换货</a>
-
-                                <a href="/AjaxCart/Logout">退出</a>
-                            </div>
-                        </li>
-                        <li><a href="http://10.31.158.17/yiguo/yiguoshengxian/src/registor.html">[注册]</a></li>
-                        <li><a href="http://10.31.158.17/yiguo/yiguoshengxian/src/login.html">[登录]</a></li>
-
-                    </ul>
-                </div>
-            </div>
-
-            <!------- 头部 ------->
-            <div class="header clearfix">
-                <div class="wrap">
-                    <div class="logo">
-                        <a href="http://www.yiguo.com" target="_blank"></a>
-
-                    </div>
-                    <div class="steps">
-                        <ul>
-                            <li class="on"><b class="b1"></b><span>我的购物车</span></li>
-                            <li><i></i><b class="b2"></b><span>填写订单信息</span></li>
-                            <li><i></i><b class="b3"></b><span>成功提交订单</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<body id="body">
+    <div class="popout-con"
+        style="background: white; position: absolute; z-index: 10; left: 35%; top:300px;display: none;">
+        <div class="title"><i></i>提 示</div>
+        <div class="con">
+            <p style="text-align: center; font-size: 14px; padding-top: 15px;">确认清除购物车？</p>
+            <div class="btnbox" style="margin-top: 45px; "><a class="confirm keep" href="javascript:">确定</a><a
+                    class="confirm button" style="background: white;border:1px solid green; color: green;"
+                    href="javascript:">取消</a></div>
+        </div>
+    </div>
+    <div class="w">
 
 
-            <div class="popout dazhaxie" style="display: none;">
-                <div class="popout-wrap">
-                    <div class="popout-con">
-                        <a class="close" onclick="$('.dazhaxie').hide()">×</a>
+        <!------- 顶部工具栏 ------->
+        <div class="site-nav">
+            <div class="wrap">
+                <ul class="fl">
+                    <li>欢迎光临易果生鲜！</li>
+                    <li>
+                        <img src="//img05.yiguoimg.com/d/web/190408/00592/145951/notice.png"
+                            style="vertical-align:middle;width:16px;height:16px;">
+                        <a href="http://www.yiguo.com/help/policenotice.html" target="_blank">网警提示</a>
+                    </li>
+                </ul>
+                <ul class="fr">
+                    <li class="apt">
+                        <img src="//img06.yiguoimg.com/d/web/190328/00592/142712/招聘1.png"
+                            style="vertical-align:middle;">
+                        <a href="http://hr.yiguo.com" target="_blank">人才招聘</a>
+                    </li>
+                    <li class="apt">
+                        <img src="//img06.yiguoimg.com/d/web/181129/00341/103626/aptitudeicon.png"
+                            style="vertical-align:middle;">
+                        <a href="http://www.yiguo.com/help/Qualification.html" target="_blank">营业资质</a>
+                    </li>
+                    <li class="TEL"><a href="http://home.yiguo.com/Trade/OnlineDelivery"
+                            target="_blank"><i></i>礼品兑换券入口</a></li>
+                    <li class="pay"><a href="http://home.yiguo.com/Recharge/Index" target="_blank"><i></i>礼品卡绑定</a>
+                    </li>
+                    <li class="mobile">
+                        <div class="tit"><a href="javascript:void(0)"><i></i>手机易果<s></s></a></div>
                         <div class="con">
-                            <p>大闸蟹类商品仅限APP购买，立即扫描二维码下载APP享受更多优惠</p>
-                            <p><img src="http://static01.yiguo.com/cart/images/header/qrcode_app.jpg"></p>
-                            <a class="btn" href="http://img02.yiguo.com/mobapp/appdownload.html"
-                                target="_blank">立即下载</a>
+                            <div class="item"><img src="http://static01.yiguo.com/www/images/header/qrcode_app.jpg"
+                                    width="125" height="125"><span>扫一扫下载APP</span></div>
+                            <div class="item"><img src="http://static01.yiguo.com/www/images/header/qrcode_wechat.jpg"
+                                    width="125" height="125"><span>易果生鲜官方微信</span></div>
                         </div>
+                    </li>
+                    <li class="myyiguo">
+                        <div class="tit"><a href="http://home.yiguo.com" target="_blank"><i></i>我的易果<s></s></a>
+                        </div>
+                        <div class="con">
+                            <a href="http://home.yiguo.com/Trade/OrderList">我的订单</a>
+                            <a href="http://home.yiguo.com/Trade/MyCoupons">我的优惠券</a>
+                            <a href="http://home.yiguo.com/Trade/UMoney">我的悠币</a>
+                            <a href="http://home.yiguo.com/Trade/MyCollection">我的收藏</a>
+                            <a href="http://home.yiguo.com/Trade/BackOrder">我的退换货</a>
+
+                            <a id="_logout" href="/AjaxCart/Logout">退出</a>
+                        </div>
+                    </li>
+                    <li><a id="_register" href="http://10.31.158.17/yiguo/src/registor.html">[注册]</a></li>
+                    <li><a id="_login" href="http://10.31.158.17/yiguo/src/login.html">[登录]</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!------- 头部 ------->
+        <div class="header clearfix">
+            <div class="wrap">
+                <div class="logo">
+                    <a href="http://10.31.158.17/yiguo/src/yiguo.html" target="_blank"></a>
+
+                </div>
+                <div class="steps">
+                    <ul>
+                        <li class="on"><b class="b1"></b><span>我的购物车</span></li>
+                        <li><i></i><b class="b2"></b><span>填写订单信息</span></li>
+                        <li><i></i><b class="b3"></b><span>成功提交订单</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="popout dazhaxie" style="display: none;">
+            <div class="popout-wrap">
+                <div class="popout-con">
+                    <a class="close" onclick="$('.dazhaxie').hide()">×</a>
+                    <div class="con">
+                        <p>大闸蟹类商品仅限APP购买，立即扫描二维码下载APP享受更多优惠</p>
+                        <p><img src="http://static01.yiguo.com/cart/images/header/qrcode_app.jpg"></p>
+                        <a class="btn" href="http://img02.yiguo.com/mobapp/appdownload.html" target="_blank">立即下载</a>
                     </div>
                 </div>
-                <div class="popout-bg"></div>
             </div>
+            <div class="popout-bg"></div>
+        </div>
 
-            <div id="theLogin" class="popout p-login" style="display:none;">
-                <div class="popout-wrap">
-                    <div class="popout-con">
-                        <div class="title" style="margin-bottom:40px;">登 录<a class="close" href="javascript:void()"></a>
-                        </div>
-
-                        <iframe
-                            src="https://login.yiguo.com/login/SimIndex?Url=http://cart.yiguo.com/ShopCart/RedirectToOrder"
-                            id="dialogIframe" name="dialogIframe" marginwidth="0" marginheight="0" frameborder="0"
-                            scrolling="no" style="border: 0px; width: 100%; height: 79%;"></iframe>
+        <div id="theLogin" class="popout p-login" style="display:none;">
+            <div class="popout-wrap">
+                <div class="popout-con">
+                    <div class="title" style="margin-bottom:40px;">登 录<a class="close" href="javascript:void()"></a>
                     </div>
+
+                    <iframe
+                        src="https://login.yiguo.com/login/SimIndex?Url=http://cart.yiguo.com/ShopCart/RedirectToOrder"
+                        id="dialogIframe" name="dialogIframe" marginwidth="0" marginheight="0" frameborder="0"
+                        scrolling="no" style="border: 0px; width: 100%; height: 79%;"></iframe>
                 </div>
-                <div class="popout-bg">&nbsp;</div>
             </div>
-            <!-------  我的购物车 ------->
-            <div class="cart">
-                <div class="wrap">
-                    <div class="store">
-                        <h2>
-                            我的购物车
-                            <div class="city clearfix">
-                                <div class="city-sz"><i></i>配送至：</div>
-                                <div class="city-tit">
-                                    <a class="city-name" href="javascript:void()">杭州市<s></s></a>
-                                </div>
-
+            <div class="popout-bg">&nbsp;</div>
+        </div>
+        <!-------  我的购物车 ------->
+        <div class="cart">
+            <div class="wrap">
+                <div class="store" style="display: none">
+                    <h2>
+                        我的购物车
+                        <div class="city clearfix">
+                            <div class="city-sz"><i></i>配送至：</div>
+                            <div class="city-tit">
+                                <a class="city-name" href="javascript:void()">杭州市<s></s></a>
                             </div>
-                            <a class="on-shopping" href="http://www.yiguo.com">继续购物 &gt; &gt;</a>
-                        </h2>
-                        <div class="cart-alert">
-                            <div class="cart-header">
-                                <table class="cart-table">
-                                    <tbody>
-                                        <tr>
-                                            <th class="cart-t-check"><label><input type="checkbox" checked="checked"
-                                                        class="chkAll">全选</label></th>
-                                            <th class="cart-t-info">商品信息</th>
-                                            <th class="cart-t-ub" style="width:75px;">悠币</th>
-                                            <th class="cart-t-price">单价</th>
-                                            <th class="cart-t-num">购买数量</th>
-                                            <th class="cart-t-total">合计</th>
-                                            <th class="cart-t-spec">规格</th>
-                                            <th class="cart-t-opera">操作</th>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="cart-list" id="theInsulationCan">
-                                <table class="cart-table">
-                                    <tbody>
-                                        <tr>
-                                            <td class="cart-t-check"><input type="checkbox" checked="checked"
-                                                    comid="93374f25-a478-4f67-a852-2f250c9b5e77|1"></td>
-                                            <td class="cart-t-img"><a
-                                                    href="http://www.yiguo.com/product/6000035471.html"><img
-                                                        src="http://img11.yiguoimg.com/d/items/2019/190508/9288737953687208_300.jpg"></a>
-                                            </td>
-                                            <td class="cart-t-info"><a
-                                                    href="http://www.yiguo.com/product/6000035471.html">5J西班牙橡果饲养100%伊比利亚去骨火腿(前腿)40g</a>
-                                                <p class="red"> </p>
-                                            </td>
-                                            <td class="cart-t-ub" style="width:75px;"></td>
-                                            <td class="cart-t-price">￥215.00</td>
-                                            <td class="cart-t-num">
-                                                <div class="quantity-form">
-                                                    <a href="javascript:void(0);" class="decrement"></a>
-                                                    <input id="93374f25-a478-4f67-a852-2f250c9b5e77|1" type="text"
-                                                        class="itxt" oldnum="1" value="4">
-                                                    <a href="javascript:void(0);" class="increment"></a>
-                                                </div>
-                                            </td>
-                                            <td class="cart-t-total">￥<span>255.00</span></td>
-                                            <td class="cart-t-spec">40g/包</td>
-                                            <td class="cart-t-opera">
-                                                <a href="javascript:void(0);">移入收藏</a>
-                                                <br>
-                                                <a href="javascript:void(0);">删除</a>
-                                            </td>
-                                        </tr>
 
-                                    </tbody>
-                                </table>
-                                <div id="theCart" style="display:none;">
+                        </div>
+                        <a class="on-shopping" href="http://10.31.158.17/yiguo/src/yiguo.html">继续购物 &gt; &gt;</a>
+                    </h2>
+                    <div class="cart-alert">
+                        <div class="cart-header">
+                            <table class="cart-table">
+                                <tbody>
+                                    <tr>
+                                        <th class="cart-t-check"><label><input class="select" type="checkbox"
+                                                    class="chkAll">全选</label></th>
+                                        <th class="cart-t-info">商品信息</th>
+                                        <th class="cart-t-ub" style="width:75px;"></th>
+                                        <th class="cart-t-price">单价</th>
+                                        <th class="cart-t-num">购买数量</th>
+                                        <th class="cart-t-total">合计</th>
+                                        <th class="cart-t-spec">规格</th>
+                                        <th class="cart-t-opera">操作</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="cart-list" id="theInsulationCan">
+                            <table class="cart-table going">
+                                <tbody>
+                                    <tr>
+                                        <td class="cart-t-check"><input class="input" type="checkbox"
+                                                comid="93374f25-a478-4f67-a852-2f250c9b5e77|1"></td>
+                                        <td class="cart-t-img"><a
+                                                href="http://www.yiguo.com/product/6000035471.html"><img
+                                                    src="http://img11.yiguoimg.com/d/items/2019/190508/9288737953687208_300.jpg"></a>
+                                        </td>
+                                        <td class="cart-t-info"><a
+                                                href="http://www.yiguo.com/product/6000035471.html">5J西班牙橡果饲养100%伊比利亚去骨火腿(前腿)40g</a>
+                                            <p class="red"> </p>
+                                        </td>
+                                        <!-- <td class="cart-t-ub" style="width:75px;"></td> -->
+                                        <td class="carts-t-price">￥215.00</td>
+                                        <td class="cart-t-num">
+                                            <div class="quantity-form">
+                                                <a href="javascript:void(0);" class="decrement"></a>
+                                                <input id="93374f25-a478-4f67-a852-2f250c9b5e77|1" type="text"
+                                                    class="itxt" oldnum="1" value="4">
+                                                <a href="javascript:void(0);" class="increment"></a>
+                                            </div>
+                                        </td>
+                                        <td class="cart-t-total">￥<span class="span">255.00</span></td>
+                                        <td class="cart-t-spec">40g/包</td>
+                                        <td class="cart-t-opera">
+                                            <a class="del" href="javascript:void(0);">删除</a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <!-- <div id="theCart">
                                     <span id="theTotalUB">0</span>
                                     <span id="theTotalPrice">255.00</span>
+                                </div> -->
+
+                        </div>
+                        <div class="settle-space"></div>
+                        <div class="cart-footer clearfix settle">
+                            <div class="wrap">
+                                <div class="fl">
+                                    <a href="###"
+                                        onclick="G.app.CartController.RemoveMultiCommodity()"><i></i>删除选中的商品</a>
+                                    <a class="cls" href="###">清空购物车</a>
                                 </div>
+                                <div class="fr">
 
-                            </div>
-                            <div class="settle-space"></div>
-                            <div class="cart-footer clearfix settle">
-                                <div class="wrap">
-                                    <div class="fl">
-                                        <label><input type="checkbox" checked="checked" class="chkAll">全选</label>
-                                        <a href="###"
-                                            onclick="G.app.CartController.RemoveMultiCommodity()"><i></i>删除选中的商品</a>
-                                        <a href="###" onclick="G.app.CartController.ClearAll()">清空购物车</a>
-                                    </div>
-                                    <div class="fr">
+                                    <span class="ub">悠币：<em>0</em>个</span>
+                                    <span class="fs14">总价：<em>￥<span>215.00</span></em></span>
+                                    <input id="SelectedCommIds" name="SelectedCommIds" type="hidden" value="">
 
-                                        <span class="ub">悠币：<em>0</em>个</span>
-                                        <span class="fs14">总价：<em>￥<span>215.00</span></em></span>
-                                        <input id="SelectedCommIds" name="SelectedCommIds" type="hidden" value="">
+                                    <a href="###" class="btn" id="btnSubmit" name="btnSubmit"
+                                        style="cursor:pointer;">去结算</a>
 
-                                        <a href="###" class="btn" id="btnSubmit" name="btnSubmit"
-                                            style="cursor:pointer;">去结算</a>
-
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--购物车空-->
-                    <div class="cart-none" style="display:block;">
-                        <p>
-                            <b>购物车是空的，去买点东西吧！<a href="http://www.yiguo.com">继续逛逛&gt;&gt;</a></b>
-                            <br>您还尚未<a href="https://login.yiguo.com/Login?Url=http://cart.yiguo.com/">登录</a>
-                        </p>
-                    </div>
-                    <!--特惠换购-->
-                    <div class="preferential-buy">
-
-
-
-                    </div>
                 </div>
-            </div>
+                <!--购物车空-->
+                <div class="cart-none" style="display:block;">
+                    <p>
+                        <b>购物车是空的，去买点东西吧！<a href="http://10.31.158.17/yiguo/src/yiguo.html">继续逛逛&gt;&gt;</a></b>
+                        <br><span class="_notlogin">您还尚未<a href="http://10.31.158.17/yiguo/src/login.html">登录 </a>
+                        </span></p>
+                </div>
+                <!--特惠换购-->
+                <div class="preferential-buy">
 
 
-
-
-            <style>
-                i {
-                    background-image: none;
-                }
-            </style>
-
-            <div class="footer">
-                <div class="wrap">
-                    <dl class="col1">
-                        <dt>新手指南</dt>
-                        <dd>
-                            <p><a href="http://www.yiguo.com/help/registersteps.html">账户注册</a></p>
-                            <p><a href="http://www.yiguo.com/help/gouwuliucheng.html">购物流程</a></p>
-                            <p><a href="http://www.yiguo.com/help/ordering.html">订购方式</a></p>
-                            <p><a href="http://www.yiguo.com/help/ubremark.html">悠币说明</a></p>
-                            <p><a href="http://www.yiguo.com/activity/sale/2999">会员等级<i class="ml5"><img
-                                            src="http://img06.yiguoimg.com/e/web/170315/00941/154425/icon-new.png"></i></a>
-                            </p>
-
-                        </dd>
-                    </dl>
-                    <dl class="col2">
-                        <dt>付款方式</dt>
-                        <dd>
-                            <p><a href="http://www.yiguo.com/help/payment.html">支付方式</a>/<a
-                                    href="http://www.yiguo.com/help/invoiceremark.html">发票说明</a></p>
-                            <p><a href="http://www.yiguo.com/help/usechuzhika.html">礼品卡章程</a></p>
-                            <p><a href="http://www.yiguo.com/help/usegiftcard.html">优惠代码</a></p>
-                            <p><a href="http://www.yiguo.com/help/cardbuynotes.html">卡券购买章程</a></p>
-                        </dd>
-                    </dl>
-                    <dl class="col3">
-                        <dt>配送方式</dt>
-                        <dd>
-                            <p><a href="http://www.yiguo.com/help/sendyuefei.html">配送运费</a></p>
-
-                            <p><a href="http://www.yiguo.com/help/sendtime.html">时间及范围</a></p>
-                        </dd>
-                    </dl>
-                    <dl class="col4">
-                        <dt>售后服务</dt>
-                        <dd>
-                            <p><a href="http://www.yiguo.com/help/tuihuanhuoshuoming.html">退换货政策</a></p>
-                            <p><a href="http://www.yiguo.com/help/huanhuolc.html">退换货流程</a></p>
-                            <p><a href="http://www.yiguo.com/help/qa.html">常见问题</a></p>
-                            <p><a href="http://home.yiguo.com/Trade/Advice">投诉与建议</a></p>
-                        </dd>
-                    </dl>
-                    <dl class="col5">
-                        <dt>关于我们</dt>
-                        <dd>
-                            <p><a href="http://www.yiguo.com/help/introduction.html">公司介绍</a></p>
-                            <p><a href="http://www.yiguo.com/help/contact.html">联系我们</a></p>
-                            <p><a href="http://www.yiguo.com/help/procooperation.html">业务合作</a></p>
-                            <p><a href="http://www.yiguo.com/help/chengxinjubao.html">诚信举报</a></p>
-                            <p> <a href="http://www.yiguo.com/help/RegisterAgreement.html"> 用户协议</a> </p>
-                            <p><a href="http://www.yiguo.com/help/PrivacyAgreement.html">隐私协议</a></p>
-
-
-
-                        </dd>
-                    </dl>
-                    <div class="service"><span>客服热线 400-000-7788</span><span>周一至周日 9:00-21:00</span></div>
-                    <div class="copyright">
-                        <p>所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。</p>
-
-                        <p><a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">沪ICP备09008015号</a>
-                            Copyright © 2005-2019 版权所有</p>
-                        <p class="authentication">
-                            <a href="http://www.yiguo.com/legal" target="_blank" rel="nofollow"><img
-                                    src="http://img07.yiguoimg.com/d/web/171208/00652/173249/153685368061665897_121x29.png"></a>
-                            <a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110512114405424"
-                                target="_blank"><img
-                                    src="//img06.yiguoimg.com/d/web/181227/00281/143951/footer_copy.jpg"
-                                    height="47px"></a>
-                            <a target="_blank"
-                                href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010502000002"
-                                style="">
-                                <img src="http://www.beian.gov.cn/file/ghs.png"><span style="width: 180px;">沪公网安备
-                                    31010502000002号</span>
-                            </a>
-                        </p>
-                    </div>
 
                 </div>
             </div>
-            <script src="../src/script/js/jquery-1.11.3.js"></script>
-            <script src="../src/script/js/index.js"></script>
-            <script src="../src/script/js/cookie.js"></script>
-            <script src="../src/script/js/cart.js"></script>
-            <script src="../src/script/js/details.js"></script>
+        </div>
 
 
 
-    </body>
+
+        <style>
+            i {
+                background-image: none;
+            }
+        </style>
+
+        <div class="footer">
+            <div class="wrap">
+                <dl class="col1">
+                    <dt>新手指南</dt>
+                    <dd>
+                        <p><a href="http://www.yiguo.com/help/registersteps.html">账户注册</a></p>
+                        <p><a href="http://www.yiguo.com/help/gouwuliucheng.html">购物流程</a></p>
+                        <p><a href="http://www.yiguo.com/help/ordering.html">订购方式</a></p>
+                        <p><a href="http://www.yiguo.com/help/ubremark.html">悠币说明</a></p>
+                        <p><a href="http://www.yiguo.com/activity/sale/2999">会员等级<i class="ml5"><img
+                                        src="http://img06.yiguoimg.com/e/web/170315/00941/154425/icon-new.png"></i></a>
+                        </p>
+
+                    </dd>
+                </dl>
+                <dl class="col2">
+                    <dt>付款方式</dt>
+                    <dd>
+                        <p><a href="http://www.yiguo.com/help/payment.html">支付方式</a>/<a
+                                href="http://www.yiguo.com/help/invoiceremark.html">发票说明</a></p>
+                        <p><a href="http://www.yiguo.com/help/usechuzhika.html">礼品卡章程</a></p>
+                        <p><a href="http://www.yiguo.com/help/usegiftcard.html">优惠代码</a></p>
+                        <p><a href="http://www.yiguo.com/help/cardbuynotes.html">卡券购买章程</a></p>
+                    </dd>
+                </dl>
+                <dl class="col3">
+                    <dt>配送方式</dt>
+                    <dd>
+                        <p><a href="http://www.yiguo.com/help/sendyuefei.html">配送运费</a></p>
+
+                        <p><a href="http://www.yiguo.com/help/sendtime.html">时间及范围</a></p>
+                    </dd>
+                </dl>
+                <dl class="col4">
+                    <dt>售后服务</dt>
+                    <dd>
+                        <p><a href="http://www.yiguo.com/help/tuihuanhuoshuoming.html">退换货政策</a></p>
+                        <p><a href="http://www.yiguo.com/help/huanhuolc.html">退换货流程</a></p>
+                        <p><a href="http://www.yiguo.com/help/qa.html">常见问题</a></p>
+                        <p><a href="http://home.yiguo.com/Trade/Advice">投诉与建议</a></p>
+                    </dd>
+                </dl>
+                <dl class="col5">
+                    <dt>关于我们</dt>
+                    <dd>
+                        <p><a href="http://www.yiguo.com/help/introduction.html">公司介绍</a></p>
+                        <p><a href="http://www.yiguo.com/help/contact.html">联系我们</a></p>
+                        <p><a href="http://www.yiguo.com/help/procooperation.html">业务合作</a></p>
+                        <p><a href="http://www.yiguo.com/help/chengxinjubao.html">诚信举报</a></p>
+                        <p> <a href="http://www.yiguo.com/help/RegisterAgreement.html"> 用户协议</a> </p>
+                        <p><a href="http://www.yiguo.com/help/PrivacyAgreement.html">隐私协议</a></p>
+
+
+
+                    </dd>
+                </dl>
+                <div class="service"><span>客服热线 400-000-7788</span><span>周一至周日 9:00-21:00</span></div>
+                <div class="copyright">
+                    <p>所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。</p>
+
+                    <p><a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">沪ICP备09008015号</a>
+                        Copyright © 2005-2019 版权所有</p>
+                    <p class="authentication">
+                        <a href="http://www.yiguo.com/legal" target="_blank" rel="nofollow"><img
+                                src="http://img07.yiguoimg.com/d/web/171208/00652/173249/153685368061665897_121x29.png"></a>
+                        <a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110512114405424"
+                            target="_blank"><img src="//img06.yiguoimg.com/d/web/181227/00281/143951/footer_copy.jpg"
+                                height="47px"></a>
+                        <a target="_blank"
+                            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010502000002" style="">
+                            <img src="http://www.beian.gov.cn/file/ghs.png"><span style="width: 180px;">沪公网安备
+                                31010502000002号</span>
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <script src="../src/script/js/jquery-1.11.3.js"></script>
+        <script src="../src/script/js/index.js"></script>
+        <script src="../src/script/js/cookie.js"></script>
+        <script src="../src/script/js/cart.js"></script>
+        <script src="../src/script/js/details.js"></script>
+
+</body>
 
 </html>

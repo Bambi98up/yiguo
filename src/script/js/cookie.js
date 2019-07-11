@@ -15,5 +15,5 @@ function getcookie(key){
 }
 
 function delcookie(key){
-	addcookie(key,'',-1);
+	setcookie(key,'',-1);
 }

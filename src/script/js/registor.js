@@ -10,7 +10,7 @@
     $Input.eq(0).blur(function () {
         ajax({
             type: 'post',
-            url: 'http://localhost/yiguo/php/conn.php',
+            url: 'http://10.31.158.17/yiguo/php/conn.php',
             data: {
                 name: $Input.eq(0).val()
             }
@@ -247,10 +247,10 @@
             return false
         }
         else {
-            window. open('http://localhost/yiguo/src/login.html')
+            window. open('http://10.31.158.17/yiguo/src/login.html')
             ajax({ //填写的信息正确 把数据添加到数据库
                 type: 'post',
-                url: 'http://localhost/yiguo/php/conn.php',
+                url: 'http://10.31.158.17/yiguo/php/conn.php',
                 data: {
                     name: $Input.eq(0).val(),
                     pass: $Input.eq(1).val(),
