@@ -20,12 +20,14 @@
             this.$lookcart = $('.popout-con .button');
         }
         init() {
+
             let _this = this;
             let $num = 1
             $.ajax({
                 url: 'http://10.31.158.17/yiguo/php/details.php',
                 data: {
-                    picid: this.$sid
+                    picid: _this.$sid
+
                 },
                 dataType: 'json',
             }).done(function (y) {
@@ -158,35 +160,38 @@
             })
             $('.picList ul').html($lilist)
         }
-        //cookie存在转换为数组
-        $cookievalue() {
+        // cookie存在转换为数组
+        // $cookievalue() {
 
-        }
+        // }
 
         //
         $cookie() {
-            var arrsid = [];
-            var arrnum = [];
-            if (getcookie('cookiesid') && getcookie('cookeienum')) {
-                arrsid = getcookie('cookiesid').split(',');
-                arrnum = getcookie('cookienum').split(',');
+            let $sid = location.search.substring(1).split('=')[1];
+            let $arrsid = [];
+            let $arrnum = [];
+            if (getcookie('cookiesid') && getcookie('cookienum')) { // cookie存在转换为数组
+            //    alert(1)
+                $arrsid = getcookie('cookiesid').split(',')
+                $arrnum = getcookie('cookienum').split(',')
             }
-
+            // console.log($arrnum)
 
             //获取当前按钮的sid和input里面的值
-            if ($.inArray(this.$sid, arrsid) === -1) {//不存在
-                arrsid.push(this.$sid);
-                arrnum.push($('#p_number').val());
+            if ($.inArray($sid, $arrsid) === -1) {//不存在
+                //alert(1)// this.$cookievalue()
+                $arrsid.push($sid);
+                $arrnum.push($('#p_number').val());
                 //console.log(arrsid);
                 //console.log(arrnum);
-                setcookie('cookiesid', arrsid.toString(), 7);
-                setcookie('cookienum', arrnum.toString(), 7);
+                setcookie('cookiesid', $arrsid.toString(), 7);
+                setcookie('cookienum', $arrnum.toString(), 7);
             } else {//存在的话就给arrsum累加
-                var num = parseInt(arrnum[$.inArray(this.$sid, arrsid)]) + parseInt($('#p_number').val());
-                arrnum[$.inArray(this.$sid, arrsid)] = num;
-                setcookie('cookienum', arrnum.toString(), 7);
+                let num = parseInt($arrnum[$.inArray($sid, $arrsid)]) + parseInt($('#p_number').val());
+                $arrnum[$.inArray($sid, $arrsid)] = num;
+                setcookie('cookienum', $arrnum.toString(), 7);
             }
-
+            // console.log($arrnum)
         }
     }
     new Details().init();

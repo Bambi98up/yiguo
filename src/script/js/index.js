@@ -106,26 +106,41 @@
 
 }(jQuery);
 
-
-
-
-
-; !function ($) {
-	//导航栏
-	const $switch = $('.catalogs-title');
-	const $list = $('.catalogs-list')
-	$switch.on('click', function () {//点击分类显示与隐藏
-		$list.toggleClass('heid')
+; !function ($) { //固定顶部悬浮搜索框
+	$(window).on('scroll', function () {
+		var $top = $(window).scrollTop();
+		if ($top >= 50) {
+			$('.header').addClass('header_fixed').css({
+				background:'rgba(224,224,224,0.9)',
+				top:0
+			})
+		}
+		else {
+			$('.header').removeClass('header_fixed')
+		}
 	})
-	$list.find('.item').on('mouseover', function () {//划过每一个商品分类显示里面的二级导航
-		$(this).addClass('current')
-		$(this).find('.sub-item').show()
-	})
-	$list.find('.item').on('mouseout', function () {//划出每一个商品分类隐藏里面的二级导航
-		$(this).removeClass('current')
-		$(this).find('.sub-item').hide()
-	})
-}(jQuery);
+
+}(jQuery)
+
+
+
+
+	; !function ($) {
+		//导航栏
+		const $switch = $('.catalogs-title');
+		const $list = $('.catalogs-list')
+		$switch.on('click', function () {//点击分类显示与隐藏
+			$list.toggleClass('heid')
+		})
+		$list.find('.item').on('mouseover', function () {//划过每一个商品分类显示里面的二级导航
+			$(this).addClass('current')
+			$(this).find('.sub-item').show()
+		})
+		$list.find('.item').on('mouseout', function () {//划出每一个商品分类隐藏里面的二级导航
+			$(this).removeClass('current')
+			$(this).find('.sub-item').hide()
+		})
+	}(jQuery);
 
 
 !function ($) {
@@ -198,7 +213,7 @@
 	if (localStorage.getItem('user')) {
 		$('#_logout').show() //登录时显示
 		$('#_loginname').show().find('a').html(localStorage.getItem('user'))
-		$('#_register,#_login').hide() //隐藏退出登录两个Li
+		$('#_register,#_login').hide() //隐藏退出注册两个Li
 		$('#_logout').on('click', function () { //点击退出时
 			localStorage.removeItem('user'), //删除本地存储的用户名和密码
 				localStorage.removeItem('pass')
@@ -260,22 +275,4 @@
 		// $(this).addClass('current').siblings().removeClass('current')
 		$(this).find('em').addClass('current').parent().siblings().find('em').removeClass('current')
 	})
-
-
 }(jQuery)
-
-	// ; !function ($) { //搜索框的渲染
-	// 	$.ajax({
-	// 		url: 'http://search.yiguo.com/ajax/fullsearch.ashx?datestamp=1562729036829&term=f&jsoncallback=jQuery17204772882421044524_1562728980006&_=1562729036830'，
-	// 		dataType: 'jsonp',
-	// 		data: {
-	// 			value: 11
-	// 		}
-	// 	}).done(function (data) {
-	// 		console.log(data)
-	// 		$.each(data, function (i, val) {
-
-	// 		})
-	// 	})
-
-	// }(jQuery)

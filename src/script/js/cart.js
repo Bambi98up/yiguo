@@ -1,12 +1,11 @@
 !function ($) {
-    function goodslist(sid, cound) {
+    function goodslist(id, cound) {
         $.ajax({
             url: 'http://10.31.158.17/yiguo/php/yiguo.php',
             dataType: 'json'
         }).done(function (y) {
             $.each(y, function (i, val) {
-                if (sid == i) {
-                    console.log(i)
+                if (id == val.sid) {
                     var $clonebox = $('.going tbody tr').hide().clone(true, true);
                     $clonebox.find('.cart-t-img').find('img').attr('src', val.url1);
                     $clonebox.find('.cart-t-info').find('a').html(val.title);
@@ -21,32 +20,32 @@
 
                     //商品加
                     $('.increment').on('click', function () {
-                        var $count = $(this).parents('.cart-t-num').find('.quantity-form input').val();//值
-                        $count++;
-                        if ($count >= 99) {
-                            $count = 99;
+                        var $num = $(this).parents('.cart-t-num').find('.quantity-form input').val();//值
+                        $num++;
+                        if ($num >= 99) {
+                            $num = 99;
                         }
-                        $(this).parents('.cart-t-num').find('.quantity-form input').val($count);//赋值回去
+                        $(this).parents('.cart-t-num').find('.quantity-form input').val($num);//赋值回去
                         //$(this).parents('.cart-t-num').find('.b-sum').find('strong').html(singlegoodsprice($(this)));//改变后的价格
-                        $(this).parents('.cart-t-num').nextAll('.cart-t-total').find('span').html(($count * val.price).toFixed(2))
+                        $(this).parents('.cart-t-num').nextAll('.cart-t-total').find('span').html(($num * val.price).toFixed(2))
                         // console.log($('.span').html())
                         // console.log($count)
                         //priceall();//重新计算总和。
-                        setcookie('cookienum', $count.toString(), 7);//将改变的数量重新添加到cookie
+                        setcookie('cookienum', $num.toString(), 7);//将改变的数量重新添加到cookie
                     });
 
                     //商品减
                     $('.decrement').on('click', function () {
-                        var $count = $(this).parents('.cart-t-num').find('.quantity-form input').val();
+                        var $num = $(this).parents('.cart-t-num').find('.quantity-form input').val();
                         $count--;
-                        if ($count <= 1) {
-                            $count = 1;
+                        if ($num <= 1) {
+                            $num = 1;
                         }
-                        $(this).parents('.cart-t-num').find('.quantity-form input').val($count);
+                        $(this).parents('.cart-t-num').find('.quantity-form input').val($num);
 
-                        $(this).parents('.cart-t-num').nextAll('.cart-t-total').find('span').html(($count * val.price).toFixed(2))//$(this).parents('.goods-item').find('.b-sum').find('strong').html(singlegoodsprice($(this)));//改变后的价格
+                        $(this).parents('.cart-t-num').nextAll('.cart-t-total').find('span').html(($num * val.price).toFixed(2))//$(this).parents('.goods-item').find('.b-sum').find('strong').html(singlegoodsprice($(this)));//改变后的价格
                         //priceall();
-                        setcookie('cookienum', $count.toString(), 7);
+                        setcookie('cookienum', $num.toString(), 7);
                     });
                 }
             })
@@ -114,7 +113,7 @@
     })
 
     //商品总价
-    $allprice=$('.cart-list tr').children('td .span').val()
+    $allprice = $('.cart-list tr').children('td .span').val()
     $('.fs14 span').html()
 
 }(jQuery)
